@@ -39,7 +39,7 @@ func newCGroup() (cgroup, error) {
 		return newCGroupV2()
 	}
 
-	return newCGroupV1(procCGroupPath)
+	return newCGroupV1()
 }
 
 // mode returns the cgroups mode running on the host

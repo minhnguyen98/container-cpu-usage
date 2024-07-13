@@ -13,8 +13,8 @@ type cgroupv1 struct {
 	cgroups map[string]string
 }
 
-func newCGroupV1(cgroupPath string) (*cgroupv1, error) {
-	subsystems, err := parseCGroupSubsystems(cgroupPath)
+func newCGroupV1() (*cgroupv1, error) {
+	subsystems, err := parseCGroupSubsystems(procCGroupPath)
 	if err != nil {
 		return nil, err
 	}

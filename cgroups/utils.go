@@ -43,7 +43,7 @@ func parseUint(s string) (uint64, error) {
 		if errors.Is(err, strconv.ErrRange) {
 			return 0, nil
 		}
-		return 0, fmt.Errorf("cgroups: bad int format: %s", s)
+		return 0, fmt.Errorf("parseUint: bad format: %s", s)
 	}
 
 	if v < 0 {
@@ -66,16 +66,16 @@ func parseUints(val string) ([]uint64, error) {
 			fields := strings.SplitN(r, "-", 2)
 			minimum, err := parseUint(fields[0])
 			if err != nil {
-				return nil, fmt.Errorf("cgroups: bad int list format: %s", val)
+				return nil, fmt.Errorf("parseUints: bad format: %s", val)
 			}
 
 			maximum, err := parseUint(fields[1])
 			if err != nil {
-				return nil, fmt.Errorf("cgroups: bad int list format: %s", val)
+				return nil, fmt.Errorf("parseUints: bad format: %s", val)
 			}
 
 			if maximum < minimum {
-				return nil, fmt.Errorf("cgroups: bad int list format: %s", val)
+				return nil, fmt.Errorf("parseUints: bad format: %s", val)
 			}
 
 			for i := minimum; i <= maximum; i++ {
