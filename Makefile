@@ -19,6 +19,11 @@ install:
 test:
 	go test -v ./...
 
+.PHONY: cover
+cover:
+	go test -coverprofile=cover.out -covermode=atomic -coverpkg=./... ./...
+	go tool cover -html=cover.out -o cover.html
+
 $(GOLINT): tools/go.mod
 	cd tools && go install golang.org/x/lint/golint
 
