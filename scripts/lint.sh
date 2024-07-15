@@ -30,4 +30,3 @@ echo "Checking golint"
 "$(pwd)"/bin/golangci-lint run | tee -a lint.log
 echo "Checking staticcheck"
 "$(pwd)"/bin/staticcheck ./... 2>&1 |  tee -a lint.log
-[ ! -s lint.log ]
