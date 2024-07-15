@@ -4,13 +4,3 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/minhnguyen98/container-cpu-usage)](https://goreportcard.com/report/github.com/minhnguyen98/container-cpu-usage)
 
 A Go-based Linux container CPU usage monitoring tool that uses cgroup to monitor and detect high CPU consumption.
-
-## Quick Start
-
-```go
-import _ "go.uber.org/automaxprocs"
-
-func main() {
-  // Your application logic here.
-}
-```
