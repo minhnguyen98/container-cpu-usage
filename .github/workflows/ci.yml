@@ -47,5 +47,6 @@ jobs:
       uses: codecov/codecov-action@v4
       with:
         verbose: true
+        files: ./cover.out
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
