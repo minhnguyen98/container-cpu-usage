@@ -172,7 +172,7 @@ func systemCPUUsage() (cpuUsage uint64, cpuNum uint64, err error) {
 			for _, i := range parts[1:8] {
 				v, err := strconv.ParseUint(i, 10, 64)
 				if err != nil {
-					return 0, 0, fmt.Errorf("Unable to convert value %s to int: %w", i, err)
+					return 0, 0, fmt.Errorf("unable to convert value %s to int: %w", i, err)
 				}
 				totalClockTicks += v
 			}
