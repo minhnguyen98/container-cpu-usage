@@ -26,16 +26,8 @@ var (
 	isUnified bool
 )
 
-func isV2() bool {
-	if isUnifiedMode() {
-		return true
-	}
-
-	return false
-}
-
 func newCGroup() (cgroup, error) {
-	if isV2() {
+	if isUnifiedMode() {
 		return newCGroupV2()
 	}
 
